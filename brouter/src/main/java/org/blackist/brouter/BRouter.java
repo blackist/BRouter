@@ -6,7 +6,7 @@ import android.util.Log;
 import java.util.HashMap;
 
 /**
- * @author LiangLiang.Dong<liangl.dong@qq.com>
+ * @author LiangLiang.Dong[liangl.dong@qq.com]
  * @since 2018/9/28
  */
 

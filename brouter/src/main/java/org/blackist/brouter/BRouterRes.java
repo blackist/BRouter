@@ -4,7 +4,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * @author LiangLiang.Dong<liangl.dong@qq.com>
+ * @author LiangLiang.Dong[liangl.dong@qq.com]
  * @since 2018/9/28
  */
 

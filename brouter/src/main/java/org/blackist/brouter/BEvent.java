@@ -1,7 +1,7 @@
 package org.blackist.brouter;
 
 /**
- * @author LiangLiang.Dong<liangl.dong@qq.com>
+ * @author LiangLiang.Dong[liangl.dong@qq.com]
  * @since 2018/9/30
  */
 

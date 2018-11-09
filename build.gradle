@@ -13,6 +13,12 @@ buildscript {
     }
 }
 
+ext {
+    minSdkVersion = 9
+    compileSdkVersion = 26
+    sourceCompatibility = JavaVersion.VERSION_1_7
+}
+
 allprojects {
     repositories {
         google()

@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import java.io.Serializable;
 
 /**
- * @author LiangLiang.Dong<liangl.dong@qq.com>
+ * @author LiangLiang.Dong[liangl.dong@qq.com]
  * @since 2018/9/28
  */
 

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 /**
- * @author LiangLiang.Dong<liangl.dong@qq.com>
+ * @author LiangLiang.Dong[liangl.dong@qq.com]
  * @since 2018/9/28
  */
 
