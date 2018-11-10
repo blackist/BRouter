@@ -2,8 +2,7 @@
 ---
 
 
-# Router : Framework for Communication between  Android Modules.
-
+# Framework for Communication between  Android Modules.
 
 BRouter is a framework for communication between modules. Route center and Action channel mapped by URL makes code traceable.
 
