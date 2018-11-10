@@ -2,13 +2,12 @@
 ---
 
 
-# Router : Framework for Communication within Android Modules.
+# Router : Framework for Communication between  Android Modules.
 
 
-BRouter是自定义的组件间通信框架，简洁易用，与业务代码高度解耦，且适用于多进程的情况。
+BRouter is a framework for communication between modules. Route center and Action channel mapped by URL makes code traceable.
 
-
-Reference To [SAction](https://mp.weixin.qq.com/s/itAuv86OsTHfBahUrk21DA)
+Reference To [BRouter](https://blackist.org/2018/10/23/android-modulize-router/)
 
 ### Getting Started
 ---
@@ -36,6 +35,62 @@ compile 'org.blackist.brouter:brouter:1.0-GA'
 ---
 
 Reference To [Blog](https://blackist.org/2018/10/23/android-modulize-router/)
+
+Implement BAction channel in modules:
+
+``` java
+// implement BAction in module1
+public class Module1Action extends BAction {
+
+    public static final String NAME = "module1";
+
+    private static final String MESSAGE_LIST = "module1/list";
+
+    @Override
+    public Object startAction(Context context, String path, Bundle param, BEvent event) {
+        switch (path) {
+
+            case MESSAGE_LIST: {
+                data = new MessageFragment();
+            }
+            break;
+
+            default: {
+                Intent intent = new Intent(context, ModuleActivity.class);
+                intent.putExtras(param);
+                intent.setFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        }
+        return data;
+    }
+} 
+
+```
+
+Register the ModuleAction in the AppApplication:
+
+``` java
+// Register the Module1Action
+BRouter.register(Module1Action.NAME, new Module1Action());
+
+```
+
+Invoke method in some module's action by sending Request to BRouter:
+
+```
+BRouterReq req = BRouterReq.build()\
+	.action("module")
+	.path("module1/list")
+	.param(key, value)
+	.param(bundle);
+BRouterRes res = BRouter.push(context, req);
+BLog.d(res.string());
+
+```
+
+BRouterRes is response of router request, it contains code, msg and data. The data in response can be Activity, Fragment and other any objects.
+
 
 
 ### Bugs and Feedback
